@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/48b7f939-30f1-4bae-bf04-e2837896cde0)![image](https://github.com/user-attachments/assets/74db452e-6656-4f47-8da5-ba963227d19d)# Machine Learning Lab (CSE-5211)<br>
+# Machine Learning Lab (CSE-5211)<br>
 # Project Name : Credit Card Fraud Detection Using Machine Learning<br>
 Supervised By:<br>
 Md. Mynoddin<br>
