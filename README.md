@@ -28,6 +28,7 @@ It contains only numerical input variables which are the result of a PCA transfo
 The only features which have not been transformed with PCA are 'Time' and 'Amount'.<br>
 Data set link:https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud 
 #  Machine Learning Algorithms Used<br>
+# Logistic Regression :<br>
 The method of modelling the probability of a discrete result given an input variable is known as logistic regression. The most frequent logistic regression models have a binary outcome, which might be true or false, yes or no, and so forth. Logistic regression is a handy analysis tool for determining if a fresh sample fits best into a category in classification tasks. Because components of cyber security, such as threat detection, are classification problems, logistic regression is a valuable analytic tool.<br>
 1.Uses a sigmoid function to classify transactions as fraud or not.<br>
 Simple and fast, but struggles with complex fraud patterns.<br>
