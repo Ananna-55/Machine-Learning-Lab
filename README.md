@@ -95,26 +95,10 @@ This step ensures that fraud detection is automated, efficient, and scalable. <b
 
 # Result<br>
 Logistic Regression<br>
-precision    recall  f1-score   support<br>
-
-           0       0.92      0.97      0.95     70856<br>
-           1       0.97      0.92      0.94     71302<br>
-
-    accuracy                           0.94    142158<br>
-   macro avg       0.95      0.94      0.94    142158<br>
-weighted avg       0.95      0.94      0.94    142158<br>
 
 ![image](https://github.com/user-attachments/assets/518f61bf-fba1-4cce-a068-c80d4bf43464)<br>
 
 Random Forest Classifier<br>
-precision    recall  f1-score   support<br>
- 
-           0       1.00      1.00      1.00     71079<br>
-           1       1.00      1.00      1.00     71077<br>
- 
-    accuracy                           1.00    142156<br>
-   macro avg       1.00      1.00      1.00    142156<br>
-weighted avg       1.00      1.00      1.00    142156<br>
 
 ![image](https://github.com/user-attachments/assets/d8eec69c-a210-4733-bde4-8d3355b55b52)<br>
 
