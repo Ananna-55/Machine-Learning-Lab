@@ -1,0 +1,141 @@
+import os
+from google.colab import drive
+drive.mount('/content/drive')
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+data = pd.read_csv('/content/drive/MyDrive/dataset/credit card dataset/creditcard.csv')
+from google.colab import drive
+drive.mount('/content/drive')
+data.head()
+data.tail()
+data.info()
+data.isnull().sum()
+data.shape
+class_count = pd.value_counts(data['Class'], sort = True).sort_index()
+sns.countplot(x="Class", data=data)
+plt.title("Class Count")
+plt.xlabel("Class")
+plt.ylabel("Frequency")
+fraud = data[data.Class == 1]
+normal = data[data.Class == 0]
+from sklearn.preprocessing import StandardScaler
+model_data = data.drop(['Time'], axis=1)
+model_data['Amount'] = StandardScaler().fit_transform(data['Amount'].values.reshape(-1, 1))
+model_data.head()
+model_train = model_data.drop("Class", axis=1).values
+model_test = model_data["Class"].values
+from imblearn.over_sampling import SMOTE
+oversampler = SMOTE(random_state = 0)
+model_train_lr , model_test_lr = oversampler.fit_resample(model_train, model_test)
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(model_train_lr, model_test_lr, test_size = 0.25, random_state = 0)
+print(X_train.shape, X_test.shape)
+
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression(max_iter=200, random_state=0, n_jobs = -1)
+lr.fit(X_train, Y_train)
+lr_predict = lr.predict(X_test)
+from sklearn.metrics import accuracy_score, recall_score, confusion_matrix,roc_auc_score,precision_score,f1_score,classification_report
+lr_accuracy = accuracy_score(Y_test, lr_predict)
+lr_recall = recall_score(Y_test, lr_predict)
+lr_cm = confusion_matrix(Y_test, lr_predict)
+lr_auc = roc_auc_score(Y_test, lr_predict)
+lr_precision = precision_score(Y_test, lr_predict)
+lr_f1 = f1_score(Y_test, lr_predict)
+lr_cl = classification_report(Y_test, lr_predict)
+print("Accuracy of Logistic Regression: {:.4%}".format(lr_accuracy))
+print("Recall: ",(lr_recall))
+print("ROC AUC: ",(lr_auc))
+print("precision score: ",(lr_precision))
+print("f1 score: ",(lr_f1))
+print("confusion matrix:\n",(lr_cm))
+print("classification report:\n",(lr_cl))
+
+lr_cm = pd.DataFrame(lr_cm, ['True Normal','True Fraud'],['Prediction Normal','Prediction Fraud'])
+plt.figure(figsize = (8,4))
+sns.set(font_scale=1.4)
+sns.heatmap(lr_cm, annot=True,annot_kws={"size": 16},fmt='g')
+from imblearn.over_sampling import ADASYN
+sampler = ADASYN(random_state = 0)
+model_train_rf , model_test_rf = sampler.fit_resample(model_train, model_test)
+from sklearn.model_selection import StratifiedShuffleSplit
+sss = StratifiedShuffleSplit(n_splits=10, test_size=0.25, random_state=0)
+for train_index, test_index in sss.split(model_train_rf, model_test_rf):
+    X_train, X_test = model_train_rf[train_index], model_train_rf[test_index]
+    Y_train, Y_test = model_test_rf[train_index], model_test_rf[test_index]
+from sklearn.ensemble import RandomForestClassifier
+
+rf = RandomForestClassifier(
+    n_estimators= 200,
+    criterion = 'entropy',
+    random_state = 0,
+    n_jobs = -1
+    )
+
+rf.fit(X_train, Y_train)
+rf_predict = rf.predict(X_test
+rf_accuracy = accuracy_score(Y_test, rf_predict)
+rf_recall = recall_score(Y_test, rf_predict)
+rf_cm = confusion_matrix(Y_test, rf_predict)
+rf_auc = roc_auc_score(Y_test, rf_predict)
+rf_precision = precision_score(Y_test, rf_predict)
+rf_f1 = f1_score(Y_test, rf_predict)
+rf_cl = classification_report(Y_test, rf_predict)
+
+print("Accuracy of Random Forest: {:.4%}".format(rf_accuracy))
+print("Recall: ",(rf_recall))
+print("ROC AUC: ",(rf_auc))
+print("precision score: ",(rf_precision))
+print("f1 score: ",(rf_f1))
+print("confusion matrix:\n",(rf_cm))
+print("classification report:\n",(rf_cl))
+
+rf_cm = pd.DataFrame(rf_cm, ['True Normal','True Fraud'],['Prediction Normal','Prediction Fraud'])
+plt.figure(figsize = (8,4))
+sns.set(font_scale=1.4)
+sns.heatmap(rf_cm, annot=True,annot_kws={"size": 16},fmt='g')
+Prediction_Accuracy={
+    'Logistic Regression': lr_accuracy,
+    'Random Forest': rf_accuracy,
+
+}
+
+Prediction_Recall={
+    'Logistic Regression': lr_recall,
+    'Random Forest': rf_recall,
+
+}
+
+Prediction_AUC={
+    'Logistic Regression': lr_auc,
+    'Random Forest': rf_auc,
+
+}
+
+Prediction_f1_score={
+    'Logistic Regression': lr_f1,
+    'Random Forest': rf_f1,
+
+}
+plt.title('Accuracy')
+plt.barh(range(len(Prediction_Accuracy)), list(Prediction_Accuracy.values()), align='center')
+plt.yticks(range(len(Prediction_Accuracy)), list(Prediction_Accuracy.keys()))
+plt.xlabel('Accuracy Score')
+plt.title('Recall')
+plt.barh(range(len(Prediction_Recall)), list(Prediction_Recall.values()), align='center')
+plt.yticks(range(len(Prediction_Recall)), list(Prediction_Recall.keys()))
+plt.xlabel('Recall Score')
+plt.title('AUC Score')
+plt.barh(range(len(Prediction_AUC)), list(Prediction_AUC.values()), align='center')
+plt.yticks(range(len(Prediction_AUC)), list(Prediction_AUC.keys()))
+plt.xlabel('AUC Score')
+plt.title('f1 Score')
+plt.barh(range(len(Prediction_f1_score)), list(Prediction_f1_score.values()), align='center')
+plt.yticks(range(len(Prediction_f1_score)), list(Prediction_f1_score.keys()))
+plt.xlabel('f1 Score')
+rf_accuracy = accuracy_score(Y_test, rf_predict)
+print("Accuracy of Random Forest: {:.4%}".format(rf_accuracy))
