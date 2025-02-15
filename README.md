@@ -97,10 +97,18 @@ This step ensures that fraud detection is automated, efficient, and scalable. <b
 Logistic Regression<br>
 
 ![image](https://github.com/user-attachments/assets/518f61bf-fba1-4cce-a068-c80d4bf43464)<br>
+Here, 69,060 genuine transactions were correctly classified as normal (True Negatives).<br>
+65,257 fraudulent transactions were correctly identified as fraud (True Positives).<br>
+1,796 genuine transactions were incorrectly flagged as fraud (False Positives) – this may inconvenience real customers.<br>
+6,045 fraudulent transactions were wrongly classified as normal (False Negatives) – these undetected frauds are risky for banks.<br>
 
 Random Forest Classifier<br>
 
 ![image](https://github.com/user-attachments/assets/d8eec69c-a210-4733-bde4-8d3355b55b52)<br>
+Here, 100% Accuracy → The model perfectly classified all normal and fraud transactions.<br>
+Precision = 1.00 → Every fraud the model detected was actually fraud.<br>
+Recall = 1.00 → The model didn’t miss a single fraudulent transaction.<br>
+F1-score = 1.00 → The balance between precision and recall is perfect.<br>
 
 ![image](https://github.com/user-attachments/assets/099c9d16-cf99-4c09-b160-624eb86166c0)<br>
 
@@ -110,6 +118,16 @@ Random Forest Classifier<br>
 3. Blockchain & Federated Learning for secure transactions<br>
 4. Explainable AI for Fraud Investigation<br>
 5. Integration with advanced cybersecurity measures<br>
+
+# References<br>
+[1]Mohammed, Emad, and Behrouz Far. “Supervised Machine Learning Algorithms for Credit Card Fraudulent Transaction Detection: A Comparative Study.” IEEE Annals of the History of Computing, IEEE, 1 July 2018, doi.ieeecomputersociety.org/10.1109/IRI.2018.00025.<br>
+[2] S. W. L. F. Lima, H. A. K. Viana, and A. C. M. Pereira, "A machine learning approach for credit card fraud detection," in Proceedings of the 2018 IEEE International Joint Conference on Neural Networks (IJCNN), Rio de Janeiro, Brazil, 2018, pp. 1–8. DOI: 10.1109/IJCNN.2018.8489334.<br>
+[3] J. West and M. Bhattacharya, "Intelligent financial fraud detection: A comprehensive review," Computers & Security, vol. 57, pp. 47–66, Jun. 2016. DOI: 10.1016/j.cose.2016.06.004.<br>
+[4] A. C. Bahnsen, D. Aouada, A. Stojanovic, and B. Ottersten, "Feature engineering strategies for credit card fraud detection," Expert Systems with Applications, vol. 51, pp. 134–142, Jun. 2016. DOI: 10.1016/j.eswa.2016.05.015.
+
+
+
+
 
 
                                                                                             
