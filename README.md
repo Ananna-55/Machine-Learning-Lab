@@ -15,12 +15,20 @@ Credit card fraud is a growing concern in the present world with the growing fra
 # Problem Statement<br>
 Credit card fraud is a major challenge that affects financial institutions, merchants, and customers.Credit card fraud leads to significant financial losses worldwide. Fraudsters use various techniques, including stolen card information, phishing, and identity theft, to make unauthorized transactions. The challenge is to develop effective fraud detection and prevention mechanisms that minimize financial risks while ensuring a seamless experience for genuine customers.
 # Objectives<br>
-Detect Fraudulent Transactions<br>
-Handle Imbalanced Data<br>
-Minimize False Positives<br>
-Improve Fraud Detection Accuracy<br>
-Increase Security in Online Payments<br>
-Reduce Financial Losses<br>
+1.Detect Fraudulent Transactions<br>
+2.Handle Imbalanced Data<br>
+3.Minimize False Positives<br>
+4.Improve Fraud Detection Accuracy<br>
+5.Increase Security in Online Payments<br>
+6.Reduce Financial Losses<br>
+# About the Dataset<br>
+The dataset contains transactions made by credit cards in September 2013 by European cardholders.
+This dataset presents 284,807 transactions.
+It contains only numerical input variables which are the result of a PCA transformation.
+The only features which have not been transformed with PCA are 'Time' and 'Amount'.<br>
+Data set link:https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud 
+
+
 
 
 
