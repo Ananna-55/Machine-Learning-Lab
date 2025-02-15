@@ -1,4 +1,4 @@
-# Machine Learning Lab (CSE-5211)<br>
+![image](https://github.com/user-attachments/assets/48b7f939-30f1-4bae-bf04-e2837896cde0)![image](https://github.com/user-attachments/assets/74db452e-6656-4f47-8da5-ba963227d19d)# Machine Learning Lab (CSE-5211)<br>
 # Project Name : Credit Card Fraud Detection Using Machine Learning<br>
 Supervised By:<br>
 Md. Mynoddin<br>
@@ -58,6 +58,7 @@ Oversampling: Creating synthetic fraud samples.<br>
 Undersampling: Reducing the number of normal transactions to balance the dataset.<br>
 Cost-sensitive learning: Penalizing misclassification of fraud more than normal cases.<br>
 This step improves fraud detection without increasing false alarms.<br>
+
 4. Feature Selection:<br>
 
 Identifying the most important features that influence fraud detection.<br>
@@ -89,7 +90,53 @@ Confusion Matrix: A visual representation of correct and incorrect predictions. 
 7. Fraud Detection & Deployment: <br>
    
 The trained model is integrated into a real-world system for detecting fraud.
-This step ensures that fraud detection is automated, efficient, and scalable.
+This step ensures that fraud detection is automated, efficient, and scalable. <br>
+![image](https://github.com/user-attachments/assets/9629d1b5-ab95-4eaa-a0b8-058083d2d42b)<br>
+
+# Result<br>
+Logistic Regression<br>
+precision    recall  f1-score   support<br>
+
+           0       0.92      0.97      0.95     70856<br>
+           1       0.97      0.92      0.94     71302<br>
+
+    accuracy                           0.94    142158<br>
+   macro avg       0.95      0.94      0.94    142158<br>
+weighted avg       0.95      0.94      0.94    142158<br>
+
+![image](https://github.com/user-attachments/assets/518f61bf-fba1-4cce-a068-c80d4bf43464)<br>
+
+Random Forest Classifier<br>
+precision    recall  f1-score   support<br>
+ 
+           0       1.00      1.00      1.00     71079<br>
+           1       1.00      1.00      1.00     71077<br>
+ 
+    accuracy                           1.00    142156<br>
+   macro avg       1.00      1.00      1.00    142156<br>
+weighted avg       1.00      1.00      1.00    142156<br>
+
+![image](https://github.com/user-attachments/assets/d8eec69c-a210-4733-bde4-8d3355b55b52)<br>
+
+![image](https://github.com/user-attachments/assets/099c9d16-cf99-4c09-b160-624eb86166c0)<br>
+
+# Future Work<br>
+1. Improving model performance & accuracy<br>
+2. Adapting to emerging fraud techniques<br>
+3. Blockchain & Federated Learning for secure transactions<br>
+4. Explainable AI for Fraud Investigation<br>
+5. Integration with advanced cybersecurity measures<br>
+
+
+                                                                                            
+
+
+
+
+
+
+
+
 
 
 
