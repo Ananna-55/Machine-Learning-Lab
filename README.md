@@ -1,2 +1,3 @@
-# Machine Learning Lab<br> 
-CSE-5211
+# Machine Learning Lab (CSE-5211)
+
+
