@@ -32,7 +32,15 @@ Data set link:https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 The method of modelling the probability of a discrete result given an input variable is known as logistic regression. The most frequent logistic regression models have a binary outcome, which might be true or false, yes or no, and so forth. Logistic regression is a handy analysis tool for determining if a fresh sample fits best into a category in classification tasks. Because components of cyber security, such as threat detection, are classification problems, logistic regression is a valuable analytic tool.<br>
 1.Uses a sigmoid function to classify transactions as fraud or not.<br>
 Simple and fast, but struggles with complex fraud patterns.<br>
-![image](https://github.com/user-attachments/assets/fca15035-84cc-4e0e-9a65-74459d9a4c67)
+![image](https://github.com/user-attachments/assets/fca15035-84cc-4e0e-9a65-74459d9a4c67)<br>
+# Random Forest :<br>
+A Random Forest is a collection of decision trees that work together to make predictions.Random Forest builds multiple decision trees using random samples of the data. Each tree is trained on a different subset of the data which makes each tree unique.
+When creating each tree the algorithm randomly selects a subset of features or variables to split the data rather than using all available features at a time. This adds diversity to the trees.
+Each decision tree in the forest makes a prediction based on the data it was trained on. When making final prediction random forest combines the results from all the trees.For classification tasks the final prediction is decided by a majority vote. This means that the category predicted by most trees is the final prediction.
+For regression tasks the final prediction is the average of the predictions from all the trees.
+The randomness in data samples and feature selection helps to prevent the model from overfitting making the predictions more accurate and reliable.<br>
+![image](https://github.com/user-attachments/assets/19c1ef9d-565b-4167-9717-bcba57ce05d5)
+
 
 
 
