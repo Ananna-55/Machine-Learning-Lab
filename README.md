@@ -39,7 +39,58 @@ When creating each tree the algorithm randomly selects a subset of features or v
 Each decision tree in the forest makes a prediction based on the data it was trained on. When making final prediction random forest combines the results from all the trees.For classification tasks the final prediction is decided by a majority vote. This means that the category predicted by most trees is the final prediction.
 For regression tasks the final prediction is the average of the predictions from all the trees.
 The randomness in data samples and feature selection helps to prevent the model from overfitting making the predictions more accurate and reliable.<br>
-![image](https://github.com/user-attachments/assets/19c1ef9d-565b-4167-9717-bcba57ce05d5)
+![image](https://github.com/user-attachments/assets/19c1ef9d-565b-4167-9717-bcba57ce05d5)<br>
+# Methodology<br>
+1. Data Collection<br>
+
+This step involves gathering real or synthetic transaction data from banks, financial institutions, or publicly available datasets (e.g., Kaggle, IEEE-CIS).<br>
+The dataset includes transaction details such as amount, location, time, merchant type, and cardholder information.<br>
+The goal is to collect a large and diverse dataset to train the model effectively.<br>
+
+2. Preprocessing<br>
+
+Removing duplicates, handling missing values. Then converting data into a uniform format.Encoding categorical data
+Proper preprocessing ensures high-quality input data for the model.<br>
+
+3. Handling Imbalance:<br>
+
+Oversampling: Creating synthetic fraud samples.<br>
+Undersampling: Reducing the number of normal transactions to balance the dataset.<br>
+Cost-sensitive learning: Penalizing misclassification of fraud more than normal cases.<br>
+This step improves fraud detection without increasing false alarms.<br>
+4. Feature Selection:<br>
+
+Identifying the most important features that influence fraud detection.<br>
+Example features:<br>
+Transaction amount (sudden high spending can indicate fraud).<br>
+Time of transaction (unusual hours may be suspicious).<br>
+Location mismatch (transaction in a different country than usual).<br>
+Feature selection improves model performance and reduces computational cost.<br>
+
+5. Model Training:<br>
+
+Common algorithms used:<br>
+Logistic Regression: Simple and interpretable.<br>
+Decision Tree: Finds rules for detecting fraud.<br>
+Random Forest: An ensemble of decision trees for better accuracy.<br>
+KNN (K-Nearest Neighbors): Detects fraud based on transaction similarity.<br>
+Neural Networks (Deep Learning): Advanced model for complex fraud patterns.<br>
+Training involves feeding the data to these models so they learn to differentiate normal vs. fraudulent transactions.<br>
+
+6. Model Evaluation: <br>
+
+After training, the model’s performance is tested using metrics like:<br>
+Accuracy: Overall correctness. <br>
+Precision: How many detected frauds are actually fraud? <br>
+Recall (Sensitivity): How many fraud cases were correctly identified? <br>
+F1-score: A balance between precision and recall. <br>
+Confusion Matrix: A visual representation of correct and incorrect predictions. <br>
+
+7. Fraud Detection & Deployment: <br>
+   
+The trained model is integrated into a real-world system for detecting fraud.
+This step ensures that fraud detection is automated, efficient, and scalable.
+
 
 
 
